@@ -11,10 +11,16 @@ void push(stack_t **stack, unsigned int line_number)
 	char *arg = strtok(NULL, " \n");
 	int n = atoi(arg);
 
-	if (!arg || !is_valid_integer(arg))
+	if (!arg)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
-		free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
+
+
+	if (!is_valid_integer(arg))
+	{
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 
