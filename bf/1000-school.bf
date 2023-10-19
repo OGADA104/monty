@@ -1,1 +1,1 @@
-bf bf/1000-school.bf
+bf 1000-school.bf
